@@ -1,0 +1,35 @@
+<div class="container">
+
+    <form>
+        <div class="input-group">
+
+            <input id="email" type="text" class="form-control" ng-model="somekey" placeholder="Name of the test"><span class="input-group-addon">
+            <a id ="icon" class="glyphicon glyphicon-plus-sign" ng-click="addtest()" style="text-decoration: none"></a></span>
+        </div>
+
+        <form class="form-horizontal">
+
+</div>
+
+<div class="col-xs-6 col-sm-4 col-lg-3" ng-repeat="lab in rlabel" style="padding: 20px">
+    <div class="thumbnail">
+
+        <h3>{{lab.name}}</h2>
+
+            <a href="" ng-click="deleteStudent(lab.time)" class="glyphicon glyphicon-trash" style="padding: 15px;color: red;"> Delete</a>
+
+
+
+    </div>
+
+</div>
+
+
+
+</form>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <a class="btn btn-info" href="#!/page1">Back</a>
+
+    </div>
+</div>

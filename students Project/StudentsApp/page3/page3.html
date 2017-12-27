@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+            <h3>Mark Entry Form:</h3>
+        </div> <label class="checkbox-inline"><input type="checkbox" value="" ng-model="editc">Edit Credentials</label>
+        <div class="col-md-4">
+            <div class="msg3" ng-show="msg3">
+                <h3>{{msg3}}</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+    <form class="form-horizontal" ng-submit="editStudent(student.$id)">
+
+        <div ng-if="editc">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="student.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Std:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="student.std">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">class:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="student.class">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">rollno:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="student.rollno">
+                </div>
+
+            </div>
+        </div>
+        <label for="sel1">Select Subject</label>
+        <select class="form-control" id="sel1" ng-model="subsel">
+    <option ng-repeat="(value,key) in label">{{value}}</option>
+    
+  </select>
+        <label for="sel1">Select test</label>
+        <select class="form-control" id="sel1" ng-model="testsel">
+    <option ng-repeat="(value,key) in rlabel" value="{{value}}">{{key.name}}</option>
+    
+  </select>
+        <label class="radio-inline"><input type="radio" name="optradio" value="true" ng-model="studentpres">Present</label>
+        <label class="radio-inline"><input type="radio" name="optradio" value="false" ng-model="studentpres">Absent</label>
+        <div class="form-group" ng-show="studentpres==tr">
+            <label class="control-label col-sm-2">Marks:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" ng-model="marks">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-info" href="#!/page1">Back</a>
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    </form>

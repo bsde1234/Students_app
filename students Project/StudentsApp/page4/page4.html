@@ -1,0 +1,105 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-8">
+            <h3>Student Marks:</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="msg3" ng-show="msg3">
+                <h3>{{msg3}}</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col-sm-2">Name:</div>
+            <div class="col-sm-4">
+                <p ng-bind="student.name"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Std:</div>
+            <div class="col-sm-4">
+                <p ng-bind="student.std"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Class:</div>
+            <div class="col-sm-4">
+                <p ng-bind="student.class"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">Roll no:</div>
+            <div class="col-sm-4">
+                <p ng-bind="student.rollno"></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div ng-if="isphy" style="float: right"><label>physics:</label>
+        <canvas id="line" class="chart chart-line" chart-data="res" chart-labels="lbl" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="datasets"></canvas></div>
+    <div ng-if="istamil" style="float: left"> <label>Tamil:</label> <canvas id="line" class="chart chart-line" chart-data="tamildata" chart-labels="tamillabel" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="tamildatasets"></canvas></div>
+    <div ng-if="ischem" style="float: right"><label>chemistry:</label>
+        <canvas id="line" class="chart chart-line" chart-data="creturnArr" chart-labels="clabels" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="cdatasets"></canvas></div>
+    <div ng-if="istamil" style="float: left"> <label>Tamil:</label> <canvas id="line" class="chart chart-line" chart-data="tamildata" chart-labels="tamillabel" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="tamildatasets"></canvas></div>
+    <div ng-if="isphy" style="float: right"><label>physics:</label>
+        <canvas id="line" class="chart chart-line" chart-data="res" chart-labels="lbl" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="datasets"></canvas></div>
+    <div ng-if="istamil" style="float: left"> <label>Tamil:</label> <canvas id="line" class="chart chart-line" chart-data="tamildata" chart-labels="tamillabel" chart-legend="true" chart-series="series" chart-click="onClick" chart-options="lineOptions" chart-dataset-override="tamildatasets"></canvas></div>
+
+
+
+    <div class="container" style="position: inherit">
+        <label for="sel1">Select test</label>
+        <select class="form-control" id="sel1" ng-model="subsel">
+    <option>physics</option>
+    <option>chemistry</option>
+    <option>english</option>
+    <option>tamil</option>
+    <option>biology</option>
+    <option>maths</option>
+    <option>computerscience</option>
+    <option>accountancy</option>
+    <option>commerce</option>
+    <option>economics</option>
+    <option>science</option>
+    <option>socialscience</option>
+    <option>buisnessmaths</option>
+    <option>zoology</option>
+  </select>
+
+
+        <div ng-if="subsel==physics">
+
+            <table class="table table-bordered">
+                <th>
+                    <div ng-repeat="(key, value) in lbl track by $index" style="padding: 8px">
+                        <div class="col-l-10">
+                            {{value}}
+                        </div>
+                    </div>
+                </th>
+                <td>
+                    <div ng-repeat="(key, value) in fmarks track by $index" style="padding: 8px">
+                        <div class="col-l-10">
+                            {{value}}
+                        </div>
+                    </div>
+
+                </td>
+
+            </table>
+        </div>
+
+    </div>
+
+
+    </form>

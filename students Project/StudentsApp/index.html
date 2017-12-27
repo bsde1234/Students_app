@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StudentsApp</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">Students App</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#!/page1">Home</a></li>
+                    <li><a href="#!/page2">Add Student</a></li>
+                    <li><a href="#!/page5">Add Test</a></li>
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+
+        <ng-view></ng-view>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="app.js"></script>
+    <script src="page1/page1.js"></script>
+    <script src="page2/page2.js"></script>
+    <script src="page3/page3.js"></script>
+    <script src="page4/page4.js"></script>
+    <script src="page5/page5.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA4fgEyM1Ko5Nd3cTTFBb-fFgPp60MYiHw",
+            authDomain: "sstudents-8fb5a.firebaseapp.com",
+            databaseURL: "https://sstudents-8fb5a.firebaseio.com",
+            projectId: "sstudents-8fb5a",
+            storageBucket: "sstudents-8fb5a.appspot.com",
+            messagingSenderId: "776318650764"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+</body>
+
+</html>

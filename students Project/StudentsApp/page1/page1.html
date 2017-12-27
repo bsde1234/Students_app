@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-5">
+            <h3>Search: <input type="text" ng-model="search"> </h3>
+        </div>
+        <div class="col-md-4">
+            <div class="msg1" ng-show="msg1">
+                <h3>{{msg1}}</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>class</th>
+                <th>std</th>
+                <th>Roll.no</th>
+                <th width=300>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in data | filter:search" ng-show="student.name">
+                <td>{{student.name}}</td>
+                <td>{{student.class}}</td>
+                <td>{{student.std}}</td>
+                <td>{{student.rollno}}</td>
+                <td> <a href="#!/page4/{{student.$id}}" class="glyphicon glyphicon-list-alt" style="color: black;padding: 15px;"> Marks</a>
+                    <a href="#!/page3/{{student.$id}}" class="glyphicon glyphicon-pencil" style="padding: 15px;"> Edit</a>
+                    <a href="" ng-click="deleteStudent(student)" class="glyphicon glyphicon-trash" style="padding: 15px;color: red;"> Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
